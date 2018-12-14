@@ -7,7 +7,7 @@ Artifacts are uploaded in:
 https://sourceforge.net/projects/dash-docset-coq/files/
 
 ### Prerequiremens
-- docker
+docker
 
 ### How to build
 run `./build.sh`

@@ -13,7 +13,6 @@ ARG COQ_VER=8.9+beta1
 
 # required for building version <= V8.9+beta1
 #   https://github.com/coq/coq/issues/9050
-
 RUN /bin/bash /store/comp_ver.sh ${COQ_VER} gt 8.9~beta1 || apt-get install -y --no-install-recommends camlp5
 
 # required for building version <= 8.8.2
