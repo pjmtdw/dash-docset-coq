@@ -2,7 +2,7 @@ from doc2dash.parsers.intersphinx import InterSphinxParser
 
 # Sphinx Index Type -> Dash Entry Type
 # Supported Entry Types
-#    Dash: https://kapeli.com/docsets#supportedentrytypes
+#    Dash: https://github.com/Kapeli/Dash-iOS/blob/master/Dash/DHTypes.m
 #          https://github.com/Kapeli/Dash-iOS/tree/master/Dash/Images.xcassets/Types
 #    Zeal: https://github.com/zealdocs/zeal/blob/master/src/app/resources/zeal.qrc
 
