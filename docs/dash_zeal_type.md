@@ -38,7 +38,7 @@ Word
 ```
 Block, Control Structure, Enum, Expression, Glossary,
 Handler, Iterator, Register, Role, Snippet,
-State, Struct, Template, Widget,
+State, Struct, Template, Widget
 ```
 
 ### Zeal Only Document Type

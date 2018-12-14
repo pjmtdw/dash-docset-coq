@@ -7,7 +7,8 @@ Artifacts are uploaded in:
 https://sourceforge.net/projects/dash-docset-coq/files/
 
 ### Prerequiremens
-docker
+- `docker` for building
+- `python-sphinx` to run tools
 
 ### How to build
 run `./build.sh`
