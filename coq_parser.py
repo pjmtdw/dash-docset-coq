@@ -1,9 +1,9 @@
 from doc2dash.parsers.intersphinx import InterSphinxParser
 
-# Sphinx Directive Type -> Dash Entry Type
+# Sphinx reST Directives/Roles Type -> Dash Entry Type
 # Read ./docs/dash_zeal_type.md for types supported by Dash and Zeal
-# You can figure out which directive type Coq uses can be listed using ./tools/parse_objects_inv.py
-# The description of Coq directive can be found in:
+# You can figure out which directives/roles type Coq uses can be listed using ./tools/parse_objects_inv.py
+# The definition of Coq directives/roles type can be found in:
 #   https://github.com/coq/coq/blob/master/doc/tools/coqrst/coqdomain.py
 TYPE_MAP = {
     'coq:cmd': 'Command', # Coq command.
