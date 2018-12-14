@@ -1,8 +1,8 @@
 from doc2dash.parsers.intersphinx import InterSphinxParser
 
-# Sphinx Type -> Dash Entry Type
+# Sphinx Directive -> Dash Entry Type
 # Read ./docs/dash_zeal_type.md for types supported by Dash and Zeal
-# You can figure out which Sphinx type that Coq uses can be listed using ./tools/parse_objects_inv.py
+# You can figure out which directive Coq uses can be listed using ./tools/parse_objects_inv.py
 TYPE_MAP = {
     'coq:cmd': 'Command',
     'coq:cmdv': 'Variable',
