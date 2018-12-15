@@ -1,23 +1,16 @@
-FROM ubuntu:18.04
+FROM fedora:29
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-      make ocaml ocaml-findlib python3 python3-setuptools python3-pip
+# ocaml-camlp5-devel seems not required by current master branch of Coq
+RUN dnf -y --setopt=install_weak_deps=False install findutils make ocaml ocaml-num-devel \
+                    ocaml-findlib python3 python3-setuptools python3-pip ocaml-camlp5-devel
 
 # actually we don't need sphinx_rtd_theme==0.4.2, since we will use alabaster theme instead
 RUN pip3 install 'Sphinx==1.8.2' 'sphinx_rtd_theme==0.4.2' 'sphinxcontrib-bibtex==0.4.1' \
       'beautifulsoup4==4.6.3' 'pexpect==4.6.0' 'antlr4-python3-runtime==4.7.1' 'doc2dash==2.3.0'
 
-COPY coq_parser.py comp_ver.sh /store/
+COPY coq_parser.py /store/
 
 ARG COQ_VER=8.9+beta1
-
-# required for building version <= V8.9+beta1
-#   https://github.com/coq/coq/issues/9050
-RUN /bin/bash /store/comp_ver.sh ${COQ_VER} gt 8.9~beta1 || apt-get install -y --no-install-recommends camlp5
-
-# required for building version <= 8.8.2
-#   https://github.com/coq/coq/pull/7466
-RUN /bin/bash /store/comp_ver.sh ${COQ_VER} gt 8.8.2 || apt-get install -y --no-install-recommends hevea
 
 ADD https://github.com/coq/coq/archive/V${COQ_VER}.tar.gz coq.tar.gz
 RUN mkdir /coq && tar zxf coq.tar.gz -C /coq --strip-components=1

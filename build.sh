@@ -13,7 +13,7 @@ function die(){
 
 cd "$(dirname $(readlink -f "$0"))" || die "cd failed"
 docker build -t "$IMAGE" --build-arg COQ_VER="${COQ_VER}" . || die "building docker image failed"
-docker create --name "$CONTAINER" "$IMAGE" || die "creating docker container failed"
+docker create --name "$CONTAINER" "$IMAGE" /bin/sh || die "creating docker container failed"
 mkdir -p "$TARGET" || die "mkdir failed"
 docker cp "$CONTAINER":/coq/Coq.docset "$TARGET"/ || die "copying from docker container failed" 
 docker rm "$CONTAINER" || die "deleting docker container failed"
