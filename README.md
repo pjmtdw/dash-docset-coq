@@ -8,7 +8,6 @@ https://sourceforge.net/projects/dash-docset-coq/files/
 
 ### Prerequiremens
 - `docker` for building docset.
-- `python-sphinx` to run tools.
 
 ### How to build
 run `./build.sh`.
