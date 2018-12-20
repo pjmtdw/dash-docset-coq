@@ -27,6 +27,8 @@ cat <<JSON > "$TARGET/Coq.docset/meta.json" || die "writing to meta.json failed"
 }
 JSON
 
-echo "saved to $TARGET"
-echo "this script does not delete docker image"
+./tools/edit_info_plist.py "$TARGET/Coq.docset/Contents/Info.plist" || die "editing Info.plist failed"
+
+echo "Success: docset saved to $TARGET"
+echo "Note: this script does not delete docker image"
 echo "execute '$ docker rmi $IMAGE' manually"
