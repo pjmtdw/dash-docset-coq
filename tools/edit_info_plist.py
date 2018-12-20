@@ -8,8 +8,13 @@ def main():
   filename = sys.argv[1]
   tree = ET.parse(filename)
   dic: Element = tree.getroot().find("dict")
-  dic.append(fromstring("<key>dashIndexFilePath</key>"))
-  dic.append(fromstring("<string>index.html</string>"))
+  for x in [
+      "<key>dashIndexFilePath</key>",
+      "<string>index.html</string>",
+      "<key>DashDocSetFallbackURL</key>",
+      "<string>https://coq.inria.fr/distrib/current/refman/</string>"
+  ]:
+    dic.append(fromstring(x))
   tree.write(filename)
 
 if __name__ == "__main__":
