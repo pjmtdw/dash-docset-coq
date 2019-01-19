@@ -10,7 +10,7 @@ RUN pip3 install 'Sphinx==1.8.2' 'sphinx_rtd_theme==0.4.2' 'sphinxcontrib-bibtex
 
 COPY coq_parser.py /store/
 
-ARG COQ_VER=8.9+beta1
+ARG COQ_VER=8.9.0
 
 ADD https://github.com/coq/coq/archive/V${COQ_VER}.tar.gz coq.tar.gz
 RUN mkdir /coq && tar zxf coq.tar.gz -C /coq --strip-components=1
