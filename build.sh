@@ -28,6 +28,7 @@ cat <<JSON > "$TARGET/Coq.docset/meta.json" || die "writing to meta.json failed"
 JSON
 
 ./tools/edit_info_plist.py "$TARGET/Coq.docset/Contents/Info.plist" || die "editing Info.plist failed"
+./tools/remove_absent_link.py "$TARGET/Coq.docset" || die "removing absent link from index failed"
 
 echo "Success: docset saved to $TARGET"
 echo "Note: this script does not delete docker image"
