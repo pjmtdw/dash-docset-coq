@@ -2,9 +2,8 @@
 
 [Coq Proof Assistant](https://coq.inria.fr/) docset for [Dash](https://kapeli.com/dash) and their clones (e.g. [Zeal](https://zealdocs.org/)).
 
-### Download
-Artifacts are uploaded in:
-https://sourceforge.net/projects/dash-docset-coq/files/
+The artifacts are uploaded to [User Contributions of Dash](https://github.com/Kapeli/Dash-User-Contributions/tree/master/docsets/Coq).
+
 
 ### Prerequiremens
 - `docker` for building docset.
