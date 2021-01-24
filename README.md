@@ -9,7 +9,9 @@ The artifacts are uploaded to [User Contributions of Dash](https://github.com/Ka
 - `docker` for building docset.
 
 ### How to build
-run `./build.sh`.
+Run `./build.sh`.
+
+If you need to update `pip` package versions, you can add constraints in `requirements.in` and run `./pipcompile.sh` to generate a new `requirements.txt` (though you will need `python3` installed locally).
 
 ### What is this doing?
 As of [Coq version 8.8.0](https://github.com/coq/coq/releases/tag/V8.8.0), they migrated document tool from LaTeX to Sphinx. Therefore now we can use [doc2dash](https://doc2dash.readthedocs.io/en/stable/) which can generate Dash docset from Sphix document.
